@@ -1,0 +1,177 @@
+html, body { height: 100%; }
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url("https://www.nikken.com/themes_wordpress_/assets/images/general/opportunity/Image_1_.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+  
+   
+}
+
+.body-country {
+    padding-top: 130px;
+    padding-bottom: 40px;
+    background-image: url("https://www.nikken.com/themes_wordpress_/assets/images/general/opportunity/Image_1_.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+h5 { font-size: 0.875rem; }
+.form-register {
+    width: 410px;
+    max-width: 1010px;
+    padding: 35px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 60px 0 rgba(29,29,31,.09);
+    width: 100%;
+    margin: auto;
+}
+.form-register label {
+    color: #888ea8;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.form-register .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 3px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #e9ecef;
+}
+.form-register .form-control::-webkit-input-placeholder {
+    color: #3862f5;
+    font-size: 14px;
+    opacity: 0;
+}
+.form-register .form-control::-ms-input-placeholder {
+    color: #3862f5;
+    font-size: 14px;
+    opacity: 0;
+}
+.form-register .form-control::-moz-placeholder {
+    color: #3862f5;
+    font-size: 14px;
+    opacity: 0;
+}
+.form-register .form-control:focus { z-index: 2; }
+.form-register .terms-conditions-chkbox .custom-control label { color: #3b3f5c; }
+.form-register .terms-conditions-chkbox .custom-control label p { margin-top: 3px; }
+.form-register .terms-conditions-chkbox .custom-control label a {
+    color: #5247bd;
+    margin-left: 5px;
+}
+.form-register .social-icons h5 {
+    color: #494949;
+    font-weight: 600;
+}
+
+/*CUSTOM CLASS*/
+.img_country{
+    height: 80px !important;
+    width: 80px !important;
+}
+
+.img-social{
+    height: 50px !important;
+    width: 50px !important;
+}
+/*CUSTOM CLASS*/
+
+
+
+
+.breadcrumb-arrow {
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    list-style: none;
+    background-color: #e6e9ed
+}
+.breadcrumb-arrow li:first-child a {
+    border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px
+}
+.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
+    display: inline-block;
+    vertical-align: top
+}
+.breadcrumb-arrow li:not(:first-child) {
+    margin-left: -5px
+}
+.breadcrumb-arrow li+li:before {
+    padding: 0;
+    content: ""
+}
+.breadcrumb-arrow li span {
+    padding: 0 10px
+}
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+    height: 36px;
+    padding: 0 10px 0 25px;
+    line-height: 36px
+}
+.breadcrumb-arrow li:first-child a {
+    padding: 0 10px
+}
+.breadcrumb-arrow li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: #3bafda;
+    border: 1px solid #3bafda
+}
+.breadcrumb-arrow li:first-child a {
+    padding-left: 10px
+}
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent
+}
+.breadcrumb-arrow li a:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: #3bafda;
+    border-left-style: solid;
+    border-left-width: 11px
+}
+.breadcrumb-arrow li a:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #2494be
+}
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
+    background-color: #4fc1e9;
+    border: 1px solid #4fc1e9
+}
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
+    border-left-color: #4fc1e9
+}
+.breadcrumb-arrow li a:active {
+    background-color: #2494be;
+    border: 1px solid #2494be
+}
+.breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before {
+    border-left-color: #2494be
+}
+.breadcrumb-arrow li span {
+    color: #434a54
+}
+
+.hr-profile {
+    height: 10px !important;
+    border: 0 !important;
+    background-color: red !important;
+}
