@@ -49,7 +49,7 @@ function playeras(gender, kit){
 
     $.ajax({
       type: 'GET',
-      url: URLactual + '/playeras',
+      url: URLactual + 'playeras',
       dataType: "json",
       data:{ gender: gender, kit: kit},
       success: function(respuesta){
@@ -114,7 +114,7 @@ function validateMail(){
   }else{
     $.ajax({
       type: 'GET',
-      url: URLactual + '/email',
+      url: URLactual + 'email',
       dataType: "json",
       data:{ email: email},
 
@@ -304,7 +304,7 @@ function CodeBien(){
         //alert(codigo);
         $.ajax({
           type: "GET",
-          url: URLactual + '/codegood',
+          url: URLactual + 'codegood',
           dataType: "json",
           data: {
             code: codigo
@@ -334,7 +334,7 @@ function validateMailSql(){
   }else{
     $.ajax({
       type: 'GET',
-      url: URLactual + '/emailsql',
+      url: URLactual + 'emailsql',
       dataType: "json",
       data:{ email: email},
 
@@ -371,7 +371,7 @@ function Search_sponsor(value){
   var codigo = value;
   $.ajax({
     type: "GET",
-    url: URLactual + '/searchsponsor',
+    url: URLactual + 'searchsponsor',
     dataType: "json",
     data: {
       code: codigo
@@ -449,7 +449,7 @@ function Search_sponsor_Valid(){
         //alert(codigo);
         $.ajax({
           type: "GET",
-          url: URLactual + '/searchsponsorValid',
+          url: URLactual + 'searchsponsorValid',
           dataType: "json",
           data: {
             code: codigo
@@ -525,7 +525,7 @@ function getStates(){
   var country = $('#country').val();
   $.ajax({
     type: "GET",
-    url: URLactual + '/states',
+    url: URLactual + 'states',
     dataType: "json",
     data: {
       getstate: country
@@ -567,7 +567,7 @@ function getCities(){
         //string.replace(searchvalue, newvalue)
         $.ajax({
           type: "GET",
-          url: URLactual + '/municipality',
+          url: URLactual + 'municipality',
           dataType: "json",
           contentType: "text/json; charset=UTF-8",
           data: {
@@ -599,7 +599,7 @@ function getCities(){
         //string.replace(searchvalue, newvalue)
         $.ajax({
           type: "GET",
-          url: URLactual + '/ciudad',
+          url: URLactual + 'ciudad',
           dataType: "json",
           contentType: "text/json; charset=UTF-8",
           data: {
@@ -630,7 +630,7 @@ function getBanks(){
   var country = $('#country').val();
   $.ajax({
     type: "GET",
-    url: URLactual + '/banks',
+    url: URLactual + 'banks',
     dataType: "json",
     data: {
       pais: country
@@ -687,7 +687,7 @@ function getTypeBanks(){
   var country = $('#country').val();
   $.ajax({
     type: "GET",
-    url: URLactual + '/gettypebankeacount',
+    url: URLactual + 'gettypebankeacount',
     dataType: "json",
     data: {
       pais: country
