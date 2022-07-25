@@ -941,3 +941,34 @@ function Opacity_type_sponsor(value)
         }
       });
     }
+
+    function isValidRUTn(rut) {
+     // var rut= $("#rut_nat").val();
+      alert(rut);
+       $.ajax({
+          type: "GET",
+          url: '/validateRut',
+          dataType: "json",
+          contentType: "text/json; charset=UTF-8",
+          data: {
+            rut: rut
+          },
+          success: function(data){
+            if (data == 0) {
+              swal({
+                      title: 'Error',
+                      text: 'El rut es Invalido',
+                      type: 'error',
+                      padding: '2em'
+                  })
+                  document.getElementById("rut_nat").value="";
+
+            }else{
+
+            }
+        },
+        error: function(data) {
+
+        }
+      });
+    }
