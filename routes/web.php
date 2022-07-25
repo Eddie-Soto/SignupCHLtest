@@ -80,6 +80,8 @@ Route::get('profile/{country}/{language}/codegood', 'incorporacionController@Cod
 Route::get('profile/{country}/{language}/searchsponsorValid','incorporacionController@searchsponsorValid');
 Route::get('profile/{country}/{language}/playeras', 'incorporacionController@playeras');
 
+Route::get('profile/{country}/{language}/validateRut', 'incorporacionController@valida_rut');
+
 
 /* agergan datos para validación del email*/
 

@@ -913,38 +913,31 @@ function Opacity_type_sponsor(value)
 
     function isValidRUT() {
       var rut= $("#rut_nat").val();
-      if (!rut | typeof rut !== 'string') return false;
+      
+       $.ajax({
+          type: "GET",
+          url: URLactual + '/validateRut',
+          dataType: "json",
+          contentType: "text/json; charset=UTF-8",
+          data: {
+            rut: rut
+          },
+          success: function(data){
+            if (data == 0) {
+              swal({
+                      title: 'Error',
+                      text: 'El rut es Invalido',
+                      type: 'error',
+                      padding: '2em'
+                  })
+                  document.getElementById("rut_nat").value="";
 
-      var regexp = /^\d{7,8}-[k|K|\d]{1}$/;
-      var rutvalid=regexp.test(rut);
-      if(rutvalid){
+            }else{
 
-      }else{
-        swal({
-          title: 'Error',
-          text: 'debes ingresar un RUT valido',
-          type: 'error',
-          padding: '2em'
-        })
-      }
+            }
+        },
+        error: function(data) {
 
-    }
-
-    function isValidRUTn() {
-      var rut2= $("#rut").val();
-      if (!rut2 | typeof rut2 !== 'string') return false;
-
-      var regexp = /^\d{7,8}-[k|K|\d]{1}$/;
-      var rutvalid=regexp.test(rut2);
-      if(rutvalid){
-
-      }else{
-        swal({
-          title: 'Error',
-          text: 'debes ingresar un RUT valido',
-          type: 'error',
-          padding: '2em'
-        })
-      }
-
+        }
+      });
     }
