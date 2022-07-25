@@ -911,9 +911,9 @@ function Opacity_type_sponsor(value)
       }
     }
 
-    function isValidRUT() {
-      var rut= $("#rut_nat").val();
-      
+    function isValidRUT(rut) {
+     // var rut= $("#rut_nat").val();
+      alert(rut);
        $.ajax({
           type: "GET",
           url: URLactual + '/validateRut',

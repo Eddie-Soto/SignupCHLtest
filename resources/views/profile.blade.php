@@ -313,7 +313,7 @@
 <div class="row">
     <div class="col-md-12" id="rut_natural">
         <label for="rut_nat"><span style="color: red !important;">*</span> <b>{{ __('auth.rut') }}</b></label>
-        <input type="text" id="rut_nat" name="rut_nat" onblur="isValidRUT()" class="form-control">
+        <input type="text" id="rut_nat" name="rut_nat" onblur="isValidRUT(this.value)" class="form-control">
     </div>
     <div class="col-md-12" id="rut_juridica" hidden="true">
         <label for="rut"><span style="color: red !important;">*</span> <b>{{ __('auth.rutJur') }}</b></label>
