@@ -961,7 +961,7 @@ function Opacity_type_sponsor(value)
                       type: 'error',
                       padding: '2em'
                   })
-                  document.getElementById("rut_nat").value="";
+                  document.getElementById("rut").value="";
 
             }else{
 
