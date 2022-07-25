@@ -916,7 +916,7 @@ function Opacity_type_sponsor(value)
       alert(rut);
        $.ajax({
           type: "GET",
-          url: URLactual + '/validateRut',
+          url: '/validateRut',
           dataType: "json",
           contentType: "text/json; charset=UTF-8",
           data: {
