@@ -977,8 +977,6 @@ function Opacity_type_sponsor(value)
     
 function validar_identificacion(identificacion) {
     pais = $("#country").val();
-
-
     datos = { identificacion, pais };
     console.log(datos);
 
@@ -1001,6 +999,8 @@ function validar_identificacion(identificacion) {
                       type: 'error',
                       padding: '2em'
                   })
+                  $("#rut_nat").val('');
+                  $("#rut").val('');
                 }
                 //  $('#type-incorporate').html(resp)
                 //console.log(resp);
