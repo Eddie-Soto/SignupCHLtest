@@ -913,7 +913,7 @@ function Opacity_type_sponsor(value)
 
     function isValidRUT(rut) {
      // var rut= $("#rut_nat").val();
-      alert(rut);
+      //alert(rut);
        $.ajax({
           type: "GET",
           url: '/validateRut',
@@ -933,7 +933,7 @@ function Opacity_type_sponsor(value)
                   document.getElementById("rut_nat").value="";
 
             }else{
-
+              validar_identificacion(rut);
             }
         },
         error: function(data) {
@@ -944,7 +944,7 @@ function Opacity_type_sponsor(value)
 
     function isValidRUTn(rut) {
      // var rut= $("#rut_nat").val();
-      alert(rut);
+      //alert(rut);
        $.ajax({
           type: "GET",
           url: '/validateRut',
@@ -964,7 +964,7 @@ function Opacity_type_sponsor(value)
                   document.getElementById("rut").value="";
 
             }else{
-
+                validar_identificacion(rut);
             }
         },
         error: function(data) {
@@ -972,3 +972,39 @@ function Opacity_type_sponsor(value)
         }
       });
     }
+
+
+    
+function validar_identificacion(identificacion) {
+    pais = $("#country").val();
+
+
+    datos = { identificacion, pais };
+    console.log(datos);
+
+    if (identificacion != "") {
+        $.ajax({
+            type: "POST",
+            url: "https://cmsnikken.nikkenlatam.com/api/validar_identificacion",
+            datatype: "application/json",
+            data: datos,
+            success: function (resp) {
+                if (resp == 1) {
+                  // console.log("existe");
+                    // View_alert(
+                    //     "<strong>Lo sentimos, el número de identificación ya ha sido utilizado.<br>Te sugerimos contactar a servicio a clientes para validar tu información.",
+                    //     "warning"
+                    // );
+                    swal({
+                      title: 'Error',
+                      text: 'Lo sentimos, el número de identificación ya ha sido utilizado. Te sugerimos contactar a servicio a clientes para validar tu información.',
+                      type: 'error',
+                      padding: '2em'
+                  })
+                }
+                //  $('#type-incorporate').html(resp)
+                //console.log(resp);
+            },
+        });
+    }
+}
