@@ -95,8 +95,10 @@
                                 <strong>{{ Session::get('alertType') }}</strong> {{ Session::get('notice') }}
                             </div>
                     @endif
+                        
 
-    <div class="row" align="center">
+            {{-- Cerrado por mantenimiento descomentar --}}
+    {{-- <div class="row" align="center">
 
         <div class="col-md-12 alert alert-info" role="alert">
 
@@ -106,7 +108,7 @@
         </div>
         
         
-    </div>
+    </div> --}}
        <!-- Modal retomar incorporación -->
 
     <div class="modal fade" id="modal-return-incorporate" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">

@@ -22,7 +22,7 @@
                                         <div class="alert alert-success" role="alert">
 
                                             <p align="center" style="font-size: 18px; font: calibri; color: black;">Estimado Influencer:<br>
-                                                En este momento estamos en mantenimiento.<br> Te invitamos a volver el lunes 25 de Octubre para registrar tus compras.</p>
+                                                En este momento estamos en mantenimiento.<br> Te invitamos a volver el Lunes 09 de Enero para registrar tus compras.</p>
 
                                         </div>
 
