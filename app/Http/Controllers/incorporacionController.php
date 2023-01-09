@@ -599,8 +599,8 @@ public function retomar(Request $request){
     public function index(Request $request){
         $email=$request->email;
 
-       //return view('index',array("email"=>$email));
-        return view('mantenimiento');
+       return view('index',array("email"=>$email));
+       // return view('mantenimiento');
     }
 
     public function mantenimiento(Request $request){
