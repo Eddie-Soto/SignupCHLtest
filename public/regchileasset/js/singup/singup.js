@@ -116,38 +116,87 @@ function getDataShirt() {
  */
 function validateMail() {
     var email = $("#email").val().trim();
-    if (email == "") {
-    } else {
-        $.ajax({
-            type: "GET",
-            url: URLactual + "email",
-            dataType: "json",
-            data: { email: email },
+    if (email != "") {
+        var regex =
+            /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (regex.test(email)) {
+            $.ajax({
+                url: "https://services.nikkenlatam.com/api/validate_email",
+                type: "POST",
+                datatype: "application/json",
+                data: { email },
+                success: function (resp) {
+                    response = JSON.parse(resp);
+                    if (response.status == 200) {
+                        switch (response.validate) {
+                            case 0:
+                                break;
+                            case 1:
+                                $("#email").val("");
 
-            success: function (respuesta) {
-                //alert(respuesta);
-                //  alert(email);
-                if (respuesta == 1) {
-                    // document.getElementById("btnProfile").disabled s= false;
-                } else if (respuesta == 2) {
-                    swal({
-                        title: "Error",
-                        text: "El correo ya se encuentar registrado en la Tienda Virtual",
-                        type: "error",
-                        padding: "2em",
-                    });
-                    document.getElementById("email").value = "";
-                } else if (respuesta == 0) {
-                    swal({
-                        title: "Error",
-                        text: alertDuplicateMail,
-                        type: "error",
-                        padding: "2em",
-                    });
-                    document.getElementById("email").value = "";
-                }
-            },
-        });
+                                swal({
+                                    title: "Error",
+                                    text: alertDuplicateMail,
+                                    type: "error",
+                                    padding: "2em",
+                                });
+                                break;
+                            case 2:
+                                $("#email").val("");
+                                swal({
+                                    title: "Error",
+                                    text: alertDuplicateMail,
+                                    type: "error",
+                                    padding: "2em",
+                                });
+                                break;
+                            case 3:
+                                $("#email").val("");
+                                swal({
+                                    title: "Error",
+                                    text: alertDuplicateMail,
+                                    type: "error",
+                                    padding: "2em",
+                                });
+                                break;
+                            case 4:
+                                $("#email").val("");
+                                swal({
+                                    title: "Error",
+                                    text: alertDuplicateMail,
+                                    type: "error",
+                                    padding: "2em",
+                                });
+                                break;
+                            default:
+                                $("#email").val("");
+                                swal({
+                                    title: "Error",
+                                    text: alertDuplicateMail,
+                                    type: "error",
+                                    padding: "2em",
+                                });
+                        }
+                    } else {
+                        swal({
+                            title: "Error",
+                            text: "Lo sentimos, hubo un error de conexión por favor escriba de nuevo su correo.",
+                            type: "error",
+                            padding: "2em",
+                        });
+                        $("#email").val("");
+                    }
+                },
+            });
+        } else {
+            swal({
+                title: "Error",
+                text: "Lo sentimos, coloque un correo válido.",
+                type: "error",
+                padding: "2em",
+            });
+            $("#email").val("");
+        }
     }
 }
 
@@ -1007,18 +1056,15 @@ function isValidRUTn(rut) {
 }
 
 function validar_identificacion(identificacion) {
-    pais = $("#country").val();
-    datos = { identificacion, pais };
-    console.log(datos);
-
     if (identificacion != "") {
         $.ajax({
             type: "POST",
-            url: "https://cmsnikken.nikkenlatam.com/api/validar_identificacion",
+            url: "https://services.nikkenlatam.com/api/validate_identity",
             datatype: "application/json",
-            data: datos,
+            data: { identificacion },
             success: function (resp) {
-                if (resp == 1) {
+                response = JSON.parse(resp);
+                if (response.status == 200 && response.validate == 1) {
                     // console.log("existe");
                     // View_alert(
                     //     "<strong>Lo sentimos, el número de identificación ya ha sido utilizado.<br>Te sugerimos contactar a servicio a clientes para validar tu información.",
