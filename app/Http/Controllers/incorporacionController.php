@@ -1037,7 +1037,7 @@ function Code_consecutive_second()
     $boleto=$request->input('boleto').trim("");
 
         
-
+    return "terminando las variables";
 
         $user="Incorporacion web";
         $platform="https://nikkenlatam.com/incorporacion-web/";
