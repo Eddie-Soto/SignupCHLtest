@@ -2083,7 +2083,7 @@ if($playera == "9708"){
     }
    
     \DB::beginTransaction();
-    return "despues de la transaccion";
+
     try {
 
         $conection = \DB::connection('mysql_las');
