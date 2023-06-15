@@ -2082,7 +2082,7 @@ if($playera == "9708"){
         
     }
    
-    \DB::beginTransaction();
+    // \DB::beginTransaction();
 
     try {
 
@@ -2102,7 +2102,7 @@ if($playera == "9708"){
             $incUsers->save();
         }
 
-        \DB::commit();
+        // \DB::commit();
 
         if($type_incorporation == 0 && $kit3 == 5031){
             // return $this->checkOutClub($email);
@@ -2123,7 +2123,7 @@ if($playera == "9708"){
     } catch (\Exception $e) {
 //notify to the users error message and finally script
 
-       \DB::rollback();
+    //    \DB::rollback();
        return $e;
       // return view('data',array('correo' => $email));
         echo('Ocurrio un error '.$e->getMessage());
