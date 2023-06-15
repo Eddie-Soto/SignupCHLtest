@@ -743,7 +743,7 @@ public function states(Request $request){
             $conection = \DB::connection('mysql_las');
 
                 //Obtenemos los datos del abi
-            $ciudades= $conection->table('nikkenla_marketing.control_states_test')
+            $ciudades= $conection->table('nikkenla_marketing.control_states')
             ->select('colony_name as colony_name')
             ->where('province_name','=', $ciudad)
             ->distinct('province_name')
