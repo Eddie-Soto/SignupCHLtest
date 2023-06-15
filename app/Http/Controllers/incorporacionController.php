@@ -2082,7 +2082,7 @@ if($playera == "9708"){
         $incUsers->last_password_update = date("Y-m-d H:i:s");
         
     }
-   // return "antes de la transaccion";
+   return "antes de la transaccion";
     \DB::beginTransaction();
 
     try {
