@@ -117,8 +117,7 @@
                     <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
                         <option value="">Selecciona un Kit de inicio</option>
                         <option value="5006">5006 KIT CLÁSICO $81,044.00</option>
-                        <option value="5023">5023 KIT INFLUENCER  PI WATER $176,200.00</option>
-                        <option value="5024">5024 KIT INFLUENCER  WATERFALL $382,300.00</option>
+
 
                         <!--option value="5025">5025 KIT INFLUENCER  PAQUETE PI WATER+ OPTIMIZER $465,500.00</option>
                         <option value="5026">5026 KIT INFLUENCER  PAQUETE WATERFALL + OPTIMIZER $645,800.00</option-->
