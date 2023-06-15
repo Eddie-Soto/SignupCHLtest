@@ -696,7 +696,7 @@ public function states(Request $request){
 
     $conection = \DB::connection('mysql_las');
 
-    $states = $conection->select("SELECT distinct state_name, abreviature_state FROM nikkenla_incorporation.control_states where pais='$estados' order by state_name ASC");
+    $states = $conection->select("SELECT distinct state_name, abreviature_state FROM nikkenla_marketing.control_states where pais='$estados' order by state_name ASC");
 
     \DB::disconnect('mysql_las');
 
@@ -714,7 +714,7 @@ public function states(Request $request){
         $conection = \DB::connection('mysql_las');
 
                 //Obtenemos los datos del abi
-        $cities= $conection->table('nikkenla_incorporation.control_states')
+        $cities= $conection->table('nikkenla_marketing.control_states')
         ->select('province_name as province_name')
         ->where('abreviature_state','=', $state)
         ->distinct('state_name')
@@ -743,7 +743,7 @@ public function states(Request $request){
             $conection = \DB::connection('mysql_las');
 
                 //Obtenemos los datos del abi
-            $ciudades= $conection->table('nikkenla_incorporation.control_states_test')
+            $ciudades= $conection->table('nikkenla_marketing.control_states_test')
             ->select('colony_name as colony_name')
             ->where('province_name','=', $ciudad)
             ->distinct('province_name')
