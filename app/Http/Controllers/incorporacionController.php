@@ -2082,9 +2082,9 @@ if($playera == "9708"){
         $incUsers->last_password_update = date("Y-m-d H:i:s");
         
     }
-   return "antes de la transaccion";
+   
     \DB::beginTransaction();
-
+    return "despues de la transaccion";
     try {
 
         $conection = \DB::connection('mysql_las');
@@ -2125,6 +2125,7 @@ if($playera == "9708"){
 //notify to the users error message and finally script
 
        \DB::rollback();
+       return $e;
       // return view('data',array('correo' => $email));
         echo('Ocurrio un error '.$e->getMessage());
         exit;
