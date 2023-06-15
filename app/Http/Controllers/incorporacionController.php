@@ -972,6 +972,7 @@ function Code_consecutive_second()
     * Función que obtiene todos los datos de las vistas y guarda en las BD
     */
  public function store(Request $request){
+    return $request;
     $kit3="";
     $boleto="";
     $creacion = date("Y-m-d H:i:s");
