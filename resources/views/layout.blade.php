@@ -203,7 +203,7 @@
          $('.menu-reg').css('display', 'block');
          $('.count-down').css('display', 'none');
      </script>
-     <script src="{{ asset('regchileasset/js/singup/singup.js?v=3.1.2') }} "></script>
+     <script src="{{ asset('regchileasset/js/singup/singup.js?v=3.1.3') }} "></script>
      <!--script>
         $('.wbn-datepicker').datepicker()
     </script-->
