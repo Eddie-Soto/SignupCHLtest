@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App;
-use App\Citys;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\ContractsTest;
