@@ -2106,7 +2106,7 @@ if($playera == "9708"){
 
         if($type_incorporation == 0 && $kit3 == 5031){
             // return $this->checkOutClub($email);
-            $url = 'https://test.mitiendanikken.com/mitiendanikken/auto/login/' . base64_encode($email)."?force_change=".base64_encode('1441:14412');
+            $url = 'https://test.mitiendanikken.com/mitiendanikken/auto/login/' . base64_encode($email);
             header("Location:" . $url, TRUE, 301);
             exit();
         }
