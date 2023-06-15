@@ -602,7 +602,7 @@ function getStates() {
             $.each(data, function (key, registro) {
                 $("#region").append(
                     "<option value=" +
-                        registro.state_name.replace(/ /g, "%") +
+                        registro.abreviature_state +
                         ">" +
                         registro.state_name +
                         "</option>"

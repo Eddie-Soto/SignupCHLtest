@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use App\Citys;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\ContractsTest;
@@ -695,11 +696,13 @@ public function states(Request $request){
 
     $conection = \DB::connection('mysql_las');
 
-    $states = $conection->select("SELECT distinct state_name FROM nikkenla_incorporation.control_states_test where pais='$estados' order by state_name ASC");
+    $states = $conection->select("SELECT distinct state_name, abreviature_state FROM nikkenla_incorporation.control_states where pais='$estados' order by state_name ASC");
 
     \DB::disconnect('mysql_las');
 
     return \json_encode($states);
+
+
 }
 
     /**
@@ -711,9 +714,9 @@ public function states(Request $request){
         $conection = \DB::connection('mysql_las');
 
                 //Obtenemos los datos del abi
-        $cities= $conection->table('nikkenla_incorporation.control_states_test')
+        $cities= $conection->table('nikkenla_incorporation.control_states')
         ->select('province_name as province_name')
-        ->where('state_name','=', $state)
+        ->where('abreviature_state','=', $state)
         ->distinct('state_name')
         ->where('pais','=', 10)
         ->orderBy('province_name', 'ASC')
