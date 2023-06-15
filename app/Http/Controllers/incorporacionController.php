@@ -2082,7 +2082,7 @@ if($playera == "9708"){
         $incUsers->last_password_update = date("Y-m-d H:i:s");
         
     }
-    return "antes de la transaccion";
+   // return "antes de la transaccion";
     \DB::beginTransaction();
 
     try {
@@ -2105,16 +2105,20 @@ if($playera == "9708"){
 
         \DB::commit();
 
-        if($type_incorporation == 0 and $kit3 == 5031){
-            return $this->checkOutClub($email);
-        }else if($type_incorporation == 0 and $kit3 == 5032){
-            return $this->checkOutClubApartado($email);
+        if($type_incorporation == 0 && $kit3 == 5031){
+            // return $this->checkOutClub($email);
+            $url = 'https://test.mitiendanikken.com/mitiendanikken/auto/login/' . base64_encode($email)."?force_change=".base64_encode('1441:14412');
+            header("Location:" . $url, TRUE, 301);
+            exit();
         }
         else{
-            $kit= $request->input('kit').trim("");
-            $kit_complete=$kit.':1';
-            $products_two=$kit_complete.';'.$playera.':1';
-            return $this->checkOutAbi($email,$products_two);
+            // $kit= $request->input('kit').trim("");
+            // $kit_complete=$kit.':1';
+            // $products_two=$kit_complete.';'.$playera.':1';
+            // return $this->checkOutAbi($email,$products_two);
+            $url = 'http://shopingcarttest.nikkenlatam.com/login-integration-incorporate.php?email=' . base64_encode($email) . '&item=' . $kit;
+                header("Location:" . $url, TRUE, 301);
+                exit();
         }
         
     } catch (\Exception $e) {
