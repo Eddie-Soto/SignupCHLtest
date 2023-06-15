@@ -1037,7 +1037,7 @@ function Code_consecutive_second()
     $boleto=$request->input('boleto').trim("");
 
         
-    return "terminando las variables";
+    //return "terminando las variables";
 
         $user="Incorporacion web";
         $platform="https://nikkenlatam.com/incorporacion-web/";
@@ -1077,7 +1077,7 @@ function Code_consecutive_second()
 
         $conection = \DB::connection('mysql_las');
 
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes order by code DESC limit 1");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes_test order by code DESC limit 1");
 
         \DB::disconnect('mysql_las');
 
@@ -1085,7 +1085,7 @@ function Code_consecutive_second()
         $last_digits="03";
         $completecode = $nuevocode.$last_digits;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes (code) VALUES ('$nuevocode')");
+        $consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes_test (code) VALUES ('$nuevocode')");
         \DB::disconnect('mysql_las');
         $ip = $_SERVER["REMOTE_ADDR"];
         $browser = $_SERVER['HTTP_USER_AGENT'];
@@ -1102,7 +1102,7 @@ function Code_consecutive_second()
         if ($kit == 5002 || $kit=="5002" and $boleto != '') {
 
             $conection = \DB::connection('mysql_las');
-                $user_promotion_exist = $conection->select("SELECT code_ticket FROM nikkenla_incorporation.user_promotion_kit where code_ticket = '$boleto'");
+                $user_promotion_exist = $conection->select("SELECT code_ticket FROM nikkenla_incorporation.user_promotion_kit_test where code_ticket = '$boleto'");
             \DB::disconnect('mysql_las');
 
             if ($user_promotion_exist) {
@@ -1111,7 +1111,7 @@ function Code_consecutive_second()
             }
 
             $conection = \DB::connection('mysql_las');
-                $user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
+                $user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit_test (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
             \DB::disconnect('mysql_las');
         }
 
@@ -1491,7 +1491,7 @@ $filetrhee = $request->file('filetrhee');
                $incController->id_contract = $id;
                $incController->country = $country;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -1542,7 +1542,7 @@ $filetrhee = $request->file('filetrhee');
             $incControlci->pais = $country;
             $incControlci->tipo = $type_letter;
             $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -1601,7 +1601,7 @@ $filetrhee = $request->file('filetrhee');
            $incController->id_contract = $id;
            $incController->country = $country;
            $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -1650,7 +1650,7 @@ $filetrhee = $request->file('filetrhee');
            $incControlci->pais = $country;
            $incControlci->tipo = $type_letter;
            $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -1712,7 +1712,7 @@ if($playera == "9708"){
         $incController->id_contract = $id;
         $incController->country = $country;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -1761,7 +1761,7 @@ if($playera == "9708"){
         $incControlci->pais = $country;
         $incControlci->tipo = $type_letter;
         $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -1811,7 +1811,7 @@ if($playera == "9708"){
         $incController->id_contract = $id;
         $incController->country = $country;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -1861,7 +1861,7 @@ if($playera == "9708"){
         $incControlci->pais = $country;
         $incControlci->tipo = $type_letter;
         $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -1910,7 +1910,7 @@ if($playera == "9708"){
         $incController->id_contract = $id;
         $incController->country = $country;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -1953,7 +1953,7 @@ if($playera == "9708"){
         $incControlci->pais = $country;
         $incControlci->tipo = $type_letter;
         $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -2001,7 +2001,7 @@ if($playera == "9708"){
         $incController->id_contract = $id;
         $incController->country = $country;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts where code='$completecode'");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.contracts_test where code='$completecode'");
         \DB::disconnect('mysql_las');
         if ($consecutive) {
         $incController->code = $this->Code_consecutive_second();
@@ -2043,7 +2043,7 @@ if($playera == "9708"){
         $incControlci->pais = $country;
         $incControlci->tipo = $type_letter;
         $conection = \DB::connection('mysql_las');
-            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci where codigo='$completecode'");
+            $consecutive_ci = $conection->select("SELECT codigo FROM nikkenla_marketing.control_ci_test where codigo='$completecode'");
             \DB::disconnect('mysql_las');
             if ($consecutive_ci) {
                 $incControlci->codigo = $this->Code_consecutive_second();
@@ -2082,14 +2082,14 @@ if($playera == "9708"){
         $incUsers->last_password_update = date("Y-m-d H:i:s");
         
     }
-    
+    return "antes de la transaccion";
     \DB::beginTransaction();
 
     try {
 
         $conection = \DB::connection('mysql_las');
 
-        $valido = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email'");
+        $valido = $conection->select("SELECT email FROM nikkenla_incorporation.contracts_test where email = '$email'");
 
         \DB::disconnect('mysql_las');
 
