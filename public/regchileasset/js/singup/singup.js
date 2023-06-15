@@ -589,6 +589,7 @@ function getStates() {
             getstate: country,
         },
         success: function (data) {
+            console.log(data);
             $("#region").find("option").remove();
             $("#region").append(
                 '<option value="" selected>' + selreg + "</option>"
