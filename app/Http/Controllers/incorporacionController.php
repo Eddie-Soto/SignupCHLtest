@@ -1077,7 +1077,7 @@ function Code_consecutive_second()
 
         $conection = \DB::connection('mysql_las');
 
-        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes_test order by code DESC limit 1");
+        $consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes order by code DESC limit 1");
 
         \DB::disconnect('mysql_las');
 
@@ -1085,7 +1085,7 @@ function Code_consecutive_second()
         $last_digits="03";
         $completecode = $nuevocode.$last_digits;
         $conection = \DB::connection('mysql_las');
-        $consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes_test (code) VALUES ('$nuevocode')");
+        $consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes (code) VALUES ('$nuevocode')");
         \DB::disconnect('mysql_las');
         $ip = $_SERVER["REMOTE_ADDR"];
         $browser = $_SERVER['HTTP_USER_AGENT'];
