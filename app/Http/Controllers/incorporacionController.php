@@ -686,6 +686,33 @@ public function retomar(Request $request){
     * Función que regresa la vista del retomar la incorporacion y trae los valores que nececita la vista consulta los datos de la BD SQL
     */
 
+    public function profile_tv(Request $request){
+        
+        $language = $request->language;
+        $country = $request->country;
+        $sponsor_code = base64_decode($request->sponsor);
+        App::setLocale($language);
+
+        if ($language == 'spa' && $country == 'ch') {
+            $countryN = 1;
+        }
+
+        else if ($language == 'en' && $country == 'ch') {
+            $countryN = 1;
+        }
+
+        $states="estados";
+        $cities="citys";
+
+        $conection = \DB::connection('mysql_las');
+
+        $states = $conection->select("SELECT distinct state_name FROM nikkenla_incorporation.control_states_test where pais='$country' ");
+
+        \DB::disconnect('mysql_las');
+
+        return view('profile', array('country' => $country,'language' => $language, 'states' => $states, 'sponsor_code' => $sponsor_code));
+       //  return view('mantenimiento');
+    }
 
 /**
     * Función que regresa los estados para ser mostrados en las vistas

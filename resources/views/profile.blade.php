@@ -443,14 +443,26 @@
 
                         <div class="col-sm-5">
                             <div class="form-group">
-                                <input type="text" class="form-control input-sponsor" name="code-sponsor"
-                                    id="code-sponsor" placeholder="Ingresa aquí el código aquí" onblur="CodeBien()"
-                                    onkeyup="Search_sponsor(this.value)" onchange="Validate_sponsor_exist()"
-                                    onclick="SponsorRadio()">
-                                <div id="demo"></div>
+                                @if (isset($sponsor_code))
+                                        <input type="text" class="form-control input-sponsor" name="code-sponsor"
+                                        id="code-sponsor" placeholder="Ingresa aquí el código aquí" onblur="CodeBien()"
+                                        onkeyup="Search_sponsor(this.value)" onchange="Validate_sponsor_exist()"
+                                        onclick="SponsorRadio()" value="{{$sponsor_code}}" disabled>
+                                    <div id="demo"></div>
 
-                                <input type="hidden" class="form-control required input-validator-sponsor"
-                                    id="code-sponsor-validate">
+                                    <input type="hidden" class="form-control required input-validator-sponsor"
+                                        id="code-sponsor-validate" value="1">
+                                @else
+                                        <input type="text" class="form-control input-sponsor" name="code-sponsor"
+                                        id="code-sponsor" placeholder="Ingresa aquí el código aquí" onblur="CodeBien()"
+                                        onkeyup="Search_sponsor(this.value)" onchange="Validate_sponsor_exist()"
+                                        onclick="SponsorRadio()">
+                                    <div id="demo"></div>
+
+                                    <input type="hidden" class="form-control required input-validator-sponsor"
+                                        id="code-sponsor-validate">
+                                @endif
+                                
                             </div>
                             <!--div class="form-group">
                            <input type="text"  class="form-control input-sponsor" name="code-sponsor" id="code-sponsor" placeholder="Ingresa aquí el código aquí" onkeyup="Search_sponsor(this.value)" onchange ="Validate_sponsor_exist()">
@@ -469,6 +481,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <label id="option-sponsor-three"><input type="radio" value="3" name="type_sponsor"
+                                @if (isset($sponsor_code))
+                                    disabled
+                                @endif
                                     id="option-sponsor-2"
                                     onclick="Opacity_type_sponsor(this.value);">&nbsp;<strong>{{ __('auth.type_sponsor_three') }}</strong><br /><small>{{ __('auth.type_sponsor_threes') }}</small></label>
                         </div>

@@ -79,6 +79,7 @@ Route::get('profile/{country}/{language}/states','incorporacionController@states
 Route::get('profile/{country}/{language}/codegood', 'incorporacionController@Codegood');
 Route::get('profile/{country}/{language}/searchsponsorValid','incorporacionController@searchsponsorValid');
 Route::get('profile/{country}/{language}/playeras', 'incorporacionController@playeras');
+Route::get('profile/{country}/{language}/{sponsor}', 'incorporacionController@profile_tv');
 
 Route::get('/validateRut', 'incorporacionController@valida_rut');
 
